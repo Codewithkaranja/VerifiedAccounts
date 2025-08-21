@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Verified Writing Accounts</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <style>
+      /* Reset */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: #f9fafb59;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      /* HEADER */
+      header {
+        background: #111111ee;
+        padding: 15px 40px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.699);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: auto;
+      }
+
+      .logo {
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: #fff;
+        letter-spacing: 1px;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 25px;
+      }
+
+      nav ul li a {
+        text-decoration: none;
+        color: #ddd;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        padding: 8px 12px;
+        border-radius: 6px;
+      }
+
+      nav ul li a:hover,
+      nav ul li a.active {
+        background: green;
+        color: #fff;
+      }
+
+      /* Hamburger Menu */
+      .menu-toggle {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+      }
+
+      .menu-toggle span {
+        height: 3px;
+        width: 25px;
+        background: #fff;
+        margin: 4px 0;
+        border-radius: 5px;
+      }
+
+      /* HERO SECTION */
+      .hero {
+        text-align: center;
+        padding: 120px 20px;
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+          url("https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1400&q=80")
+            no-repeat center center/cover;
+        color: #fff;
+      }
+
+      .hero h1 {
+        font-size: 2.8rem;
+        margin-bottom: 20px;
+      }
+
+      .hero p {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+      }
+
+      .btn {
+        display: inline-block;
+        margin: 10px;
+        padding: 12px 25px;
+        background: purple;
+        color: #fff;
+        border-radius: 30px;
+        font-weight: bold;
+        text-decoration: none;
+        transition: 0.3s ease;
+      }
+
+      .btn:hover {
+        background: #218838;
+      }
+
+      .btn.secondary {
+        background: blue;
+        color: #f5f3f3;
+      }
+
+      .btn.secondary:hover {
+        background: #e0a800;
+      }
+
+      /* WhatsApp Floating Button */
+      .whatsapp-btn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: green;
+        color: #fff;
+        padding: 15px;
+        border-radius: 20%;
+        font-size: 24px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        text-decoration: none;
+        z-index: 1000;
+      }
+
+      .whatsapp-btn:hover {
+        background: #1ebe5c;
+      }
+
+      /* TRUST SECTION */
+      .trust {
+        background: #ffffff65;
+        padding: 60px 20px;
+        text-align: center;
+      }
+
+      .trust h2 {
+        font-size: 2rem;
+        margin-bottom: 25px;
+        color: #111;
+      }
+
+      .trust-box {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+      }
+
+      .trust-box p {
+        background: #f1f3f552;
+        padding: 15px 25px;
+        border-radius: 10px;
+        font-weight: 500;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s;
+      }
+
+      .trust-box p:hover {
+        transform: translateY(-5px);
+        background: #e9ecef63;
+      }
+
+      /* FOOTER */
+      footer {
+        background: #111;
+        color: #ccc;
+        text-align: center;
+        padding: 20px;
+        margin-top: 50px;
+        font-size: 0.9rem;
+      }
+
+      /* RESPONSIVENESS */
+      @media (max-width: 768px) {
+        nav ul {
+          display: none;
+          flex-direction: column;
+          width: 100%;
+          margin-top: 10px;
+          margin-left: 80px;
+          background: #111;
+          padding: 10px;
+          border-radius: 6px;
+        }
+
+        nav ul.showing {
+          display: flex;
+        }
+
+        .menu-toggle {
+          display: flex;
+        }
+
+        .hero h1 {
+          font-size: 2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <h2 class="logo">Verified Accounts</h2>
+        <div class="menu-toggle" id="menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ul id="menu">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="accounts.html">Accounts</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <h1>Get Verified Writing Accounts Ready to Work for You</h1>
+      <p>
+        Secure, fast, and reliable accounts for writers and freelancers
+        worldwide.
+      </p>
+      <a href="accounts.html" class="btn">Browse Accounts</a>
+      <a href="contact.html" class="btn secondary">Order Now</a>
+    </section>
+
+    <section class="trust">
+      <h2>Why Choose Us?</h2>
+      <div class="trust-box">
+        <p>✅ Secure Transactions</p>
+        <p>✅ Fast Delivery</p>
+        <p>✅ Verified Accounts</p>
+        <p>✅ Trusted by 1000+ Writers</p>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 Verified Accounts. All rights reserved.</p>
+    </footer>
+
+    <!-- WhatsApp Floating Button
+    <a
+      href="https://wa.me/254787884313?text=Hello%20I%20want%20to%20buy%20a%20writing%20account"
+      class="whatsapp-btn"
+      target="_blank"
+      >💬</a
+    >  -->
+    <a href="https://wa.me/0787884313" class="whatsapp-btn" target="_blank"
+      ><i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+      // Toggle menu for mobile
+      const menuToggle = document.getElementById("menu-toggle");
+      const menu = document.getElementById("menu");
+
+      menuToggle.addEventListener("click", () => {
+        menu.classList.toggle("showing");
+      });
+    </script>
+  </body>
+</html>

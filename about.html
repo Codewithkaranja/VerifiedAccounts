@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us - Verified Accounts</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <style>
+      /* ===== Global Styles ===== */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      body {
+        line-height: 1.6;
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+          url("https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1400&q=80")
+            no-repeat center center/cover;
+        color: #333;
+      }
+
+      /* ===== Header / Navbar ===== */
+      header {
+        background: #111;
+        padding: 15px 40px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: auto;
+      }
+
+      .logo {
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: #fff;
+        letter-spacing: 1px;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 25px;
+      }
+
+      nav ul li a {
+        text-decoration: none;
+        color: #ddd;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        padding: 8px 12px;
+        border-radius: 6px;
+      }
+
+      nav ul li a:hover,
+      nav ul li a.active {
+        background: green;
+        color: #fff;
+      }
+
+      /* ===== Hamburger ===== */
+      .menu-toggle {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+      }
+
+      .menu-toggle span {
+        height: 3px;
+        width: 25px;
+        background: #fff;
+        margin: 4px 0;
+        border-radius: 4px;
+      }
+
+      /* ===== Section Styling ===== */
+      .content {
+        max-width: 1000px;
+        margin: 60px auto;
+        padding: 30px;
+        background: #ffffffa8;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      }
+
+      .content h1 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        color: #080808;
+        border-left: 5px solid #28a745;
+        padding-left: 10px;
+      }
+
+      .content p {
+        margin-bottom: 15px;
+        font-size: 1.05rem;
+        color: black;
+      }
+
+      .content ul {
+        margin-left: 20px;
+        margin-top: 10px;
+      }
+
+      .content ul li {
+        margin-bottom: 8px;
+        font-size: 1.05rem;
+      }
+
+      /* ===== Testimonials ===== */
+      .testimonial {
+        background: #f1f3f544;
+        border-left: 4px solid #28a745;
+        padding: 15px 20px;
+        margin-bottom: 15px;
+        border-radius: 8px;
+        font-style: italic;
+        color: #444;
+      }
+
+      /* ===== Articles / Blog ===== */
+      article {
+        margin-bottom: 20px;
+        padding: 15px;
+        background: #fafafa33;
+        border-radius: 8px;
+        border: 1px solid #eee;
+      }
+
+      article h2 {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+        color: #1fc746;
+      }
+
+      /* ===== Footer ===== */
+      footer {
+        background: #111;
+        color: #bbb;
+        text-align: center;
+        padding: 20px;
+        margin-top: 50px;
+        font-size: 0.9rem;
+      }
+
+      /* ===== Floating Chat Button ===== */
+      .chat-btn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: green;
+        color: #fff;
+        padding: 15px 18px;
+        border-radius: 20%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        font-size: 22px;
+        text-decoration: none;
+        transition: 0.3s ease;
+        z-index: 9999;
+      }
+
+      .chat-btn:hover {
+        background: #218838;
+        transform: scale(1.1);
+      }
+
+      /* ===== Responsive ===== */
+      @media (max-width: 768px) {
+        nav ul {
+          display: none;
+          flex-direction: column;
+          width: 100%;
+          margin-top: 10px;
+          background: #111;
+          padding: 10px;
+          border-radius: 6px;
+        }
+
+        nav ul.showing {
+          display: flex;
+        }
+
+        .menu-toggle {
+          display: flex;
+        }
+
+        .content {
+          margin: 20px;
+          padding: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <h2 class="logo">Verified Accounts</h2>
+        <div class="menu-toggle" id="menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ul id="menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html" class="active">About</a></li>
+          <li><a href="accounts.html">Accounts</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="content">
+      <h1>About Us</h1>
+      <p>
+        With over 5 years of experience, we provide verified accounts to
+        freelancers worldwide. Our mission is to help writers kickstart their
+        careers with trusted, ready-to-use accounts.
+      </p>
+      <p>Why trust us?</p>
+      <ul>
+        <li>✅ Fast Delivery</li>
+        <li>✅ Verified & Safe Accounts</li>
+        <li>✅ 24/7 Support</li>
+      </ul>
+    </section>
+
+    <section class="content">
+      <h1>What Our Clients Say</h1>
+      <div class="testimonial">
+        <p>
+          ⭐️⭐️⭐️⭐️⭐️ “Got my Upwork account in 6 hrs, working perfectly!” –
+          James
+        </p>
+      </div>
+      <div class="testimonial">
+        <p>
+          ⭐️⭐️⭐️⭐️⭐️ “Best place for verified accounts. Support team is
+          top-notch.” – Grace
+        </p>
+      </div>
+    </section>
+
+    <section class="content">
+      <h1>Resources & Tips</h1>
+      <article>
+        <h2>Best Freelance Platforms for Writers 2025</h2>
+        <p>Explore platforms like Upwork, Fiverr, iWriter and more…</p>
+      </article>
+    </section>
+    <!-- ===== How It Works ===== -->
+    <section class="content" id="how">
+      <h1>How It Works</h1>
+      <ol>
+        <li>Browse available accounts.</li>
+        <li>Place your order.</li>
+        <li>Make a secure payment.</li>
+        <li>Receive login credentials within hours.</li>
+      </ol>
+    </section>
+
+    <!-- ===== FAQs ===== -->
+    <section class="content" id="faq">
+      <h1>FAQs</h1>
+      <p><strong>Are accounts safe?</strong> Yes, all are verified.</p>
+      <p><strong>Replacement if banned?</strong> Yes, within 7 days.</p>
+    </section>
+
+    <!-- ===== Legal Info ===== -->
+    <section class="content" id="legal">
+      <h1>Legal Information</h1>
+      <h3>Refund Policy</h3>
+      <p>Refunds allowed only for undelivered accounts.</p>
+
+      <h3>Terms & Conditions</h3>
+      <p>By purchasing, you agree that account usage is your responsibility.</p>
+
+      <h3>Disclaimer</h3>
+      <p>
+        We sell verified accounts for freelance purposes only. We are not
+        affiliated with Upwork, Fiverr, or other platforms.
+      </p>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 Verified Accounts. All rights reserved.</p>
+    </footer>
+
+    <!-- Floating WhatsApp Chat Button 
+    <a
+      href="https://wa.me/254787884313?text=Hello%20I%20need%20a%20verified%20account"
+      class="chat-btn"
+      target="_blank"
+      >💬</a
+    > -->
+    <a href="https://wa.me/0787884313" class="chat-btn" target="_blank">
+      <i class="fab fa-whatsapp" id="whatsapp-btn"></i>
+    </a>
+
+    <script>
+      // Toggle menu for mobile
+      const menuToggle = document.getElementById("menu-toggle");
+      const menu = document.getElementById("menu");
+
+      menuToggle.addEventListener("click", () => {
+        menu.classList.toggle("showing");
+      });
+    </script>
+  </body>
+</html>

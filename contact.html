@@ -46,7 +46,7 @@
       }
 
       .logo {
-        font-size: 1.4rem;
+        font-size: 2rem;
         font-weight: 600;
         color: #f4f5f7;
       }
@@ -164,7 +164,7 @@
       }
 
       form button {
-        background: #007bff;
+        background: blue;
         color: #fff;
         border: none;
         padding: 0.9rem;
@@ -181,7 +181,7 @@
 
       /* ===== Links ===== */
       a {
-        color: #007bff;
+        color: blue;
         text-decoration: none;
         font-weight: 500;
       }
@@ -293,7 +293,10 @@
       </form>
       <div class="contact-links">
         <p>
-          <a href="https://wa.me/254787884313" target="_blank">
+          <a
+            href="https://wa.me/254787884313?text=Hello%20I%20need%20a%20Verified%20Account"
+            target="_blank"
+          >
             <i class="fab fa-whatsapp" id="whatsapp-btn"></i> Chat Now
           </a>
         </p>
@@ -312,6 +315,11 @@
     </footer>
 
     <script>
+      // Optional success feedback (for non-redirect version)
+      if (window.location.href.includes("success=true")) {
+        alert("🎉 Thank you! Your application has been received.");
+      }
+
       // Toggle menu for mobile
       const menuToggle = document.getElementById("menu-toggle");
       const menu = document.getElementById("menu");

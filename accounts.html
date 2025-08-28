@@ -49,7 +49,7 @@
       .logo {
         font-size: 2rem;
         font-weight: 600;
-        color: #f4f5f7;
+        color: purple;
       }
 
       nav ul {
@@ -285,7 +285,7 @@
   <body>
     <!-- ===== Header ===== -->
     <header>
-      <h2 class="logo">Verified Accounts</h2>
+      <h2 class="logo">AccountSITE</h2>
       <div class="menu-toggle" id="menu-toggle">
         <span></span>
         <span></span>
@@ -311,6 +311,18 @@
       </p>
     </section>
 
+    <section class="content" id="about">
+      <h1>Included in every plan</h1>
+      <ul>
+        ✅Compliance checklist for your platform(s)
+        <br />
+        ✅Profile headline & bio templates
+        <br />✅5 proposal scripts that convert
+        <br />
+        ✅Simple analytics & KPI tracker (Notion)
+      </ul>
+    </section>
+
     <!-- ===== Accounts Section ===== -->
     <section class="content" id="accounts">
       <h1>Available Accounts</h1>
@@ -323,7 +335,7 @@
           <h3>Texting Factory</h3>
           <p>Start Chatting today with Our Top-Rated Accounts</p>
           <a
-            href="https://wa.me/254787884313?text=Hey%20there,%20i%20want%20to%20buy%20a%20Texting%20Factory%20Account"
+            href="https://wa.me/254787884313?text=Hey%20there,%20I%20want%20to%20buy%20a%20Texting%20Factory%20Account"
           >
             <p class="price">Buy Now</p>
           </a>
@@ -336,7 +348,7 @@
           <h3>CourseHero</h3>
           <p>Begin Your Freelancing Journey With the Best Take Account</p>
           <a
-            href="https://wa.me/254787884313?text=Hey%20there,%20i%20want%20to%20buy%20a%20CourseHero%20Account"
+            href="https://wa.me/254787884313?text=Hey%20there,%20I%20want%20to%20buy%20a%20CourseHero%20Account"
             ><p class="price">Buy Now</p>
           </a>
         </div>
@@ -349,7 +361,7 @@
           <h3>Study Pool</h3>
           <p>Beginner to TopTutor Accounts Available</p>
           <a
-            href="https://wa.me/254787884313?text=Hey%20there,%20i%20want%20to%20buy%20a%20StudyPool%20Account"
+            href="https://wa.me/254787884313?text=Hey%20there,%20I%20want%20to%20buy%20a%20StudyPool%20Account"
           >
             <p class="price">Buy Now</p>
           </a>
@@ -363,7 +375,7 @@
           <h3>Upwork Account</h3>
           <p>Fully verified. Ready for freelancing jobs.</p>
           <a
-            href="https://wa.me/254787884313?text=Hey%20there,%20i%20want%20to%20buy%20an%20Upwork%20Account"
+            href="https://wa.me/254787884313?text=Hey%20there,%20I%20want%20to%20buy%20an%20Upwork%20Account"
             target="_blank"
           >
             <p class="price">Buy Now</p>
@@ -377,7 +389,7 @@
           <h3>Fiverr Account</h3>
           <p>Approved profile with gigs setup option.</p>
           <a
-            href="https://wa.me/254787884313?text=Hey%20there,%20i%20want%20to%20buy%20a%20Fiverr%20Account"
+            href="https://wa.me/254787884313?text=Hey%20there,%20I%20want%20to%20buy%20a%20Fiverr%20Account"
             ><p class="price">Buy Now</p>
           </a>
         </div>
@@ -389,7 +401,7 @@
           <h3>Freelancer Account</h3>
           <p>Active and verified, start working immediately.</p>
           <a
-            href="https://wa.me/254787884313?text=Hey%20there,%20i%20want%20to%20buy%20a%20Freelancer%20Account"
+            href="https://wa.me/254787884313?text=Hey%20there,%20I%20want%20to%20buy%20a%20Freelancer%20Account"
             ><p class="price">Buy Now</p></a
           >
         </div>
@@ -401,7 +413,7 @@
           <h3>Cloud Workers</h3>
           <p>Approved profile with Perfect Ratings.</p>
           <a
-            href="https://wa.me/254787884313?text=Hey%20there,%20i%20want%20to%20buy%20a%20CloudWorkers%20Account"
+            href="https://wa.me/254787884313?text=Hey%20there,%20I%20want%20to%20buy%20a%20CloudWorkers%20Account"
             ><p class="price">Buy Now</p>
           </a>
         </div>
@@ -413,7 +425,7 @@
           <h3>PeoplePerHour Account</h3>
           <p>Optimized for quick approvals and projects.</p>
           <a
-            href="https://wa.me/254787884313?text=Hey%20there,%20i%20want%20to%20buy%20a%20PeoplePerHour%20Account"
+            href="https://wa.me/254787884313?text=Hey%20there,%20I%20want%20to%20buy%20a%20PeoplePerHour%20Account"
             ><p class="price">Buy Now</p></a
           >
         </div>
@@ -424,6 +436,7 @@
     <section class="content" id="contact">
       <h1>Contact Us</h1>
       <form
+        id="form"
         action="https://formsubmit.co/isaacmurage18@gmail.com"
         method="POST"
       >
@@ -431,7 +444,7 @@
         <input type="text" placeholder="Phone Number" required />
         <input type="email" placeholder="Email" required />
         <textarea placeholder="Your Message"></textarea>
-        <button type="submit">Send Message</button>
+        <button type="submit" id="submitBtn">Send Message</button>
       </form>
       <div class="social-links">
         <a
@@ -444,7 +457,7 @@
 
     <!-- ===== Footer ===== -->
     <footer>
-      <p>&copy; 2025 Verified Accounts. All rights reserved.</p>
+      <p>&copy; 2025 AccountSITE. All rights reserved.</p>
     </footer>
 
     <script>
@@ -452,6 +465,15 @@
       if (window.location.href.includes("success=true")) {
         alert("🎉 Thank you! Your application has been received.");
       }
+
+      /*const submitButton = document.getElementById("submitBtn");
+      submitButton.addEventListener("click", () => {
+        if (submitButton.value.trim() === "") {
+          alert("🎉 Thank you! Your application has been received.");
+        } else {
+          alert("Fill in The required Fields");
+        }
+      });*/
 
       // Toggle menu for mobile
       const menuToggle = document.getElementById("menu-toggle");
